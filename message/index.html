@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/me.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/message.css">
+    <title>苏程室：留言板</title>
+</head>
+
+<body>
+    <div class="message">
+        <textarea name="" id="text" cols="80" rows="20"></textarea>
+        <input type="submit" id="btn" value="留言">
+    </div>
+    <div class="liu">
+        <ul></ul>
+    </div>
+    <script>
+        var text = document.querySelector('#text');
+        var btn = document.querySelector('#btn');
+        setInterval(function () {
+            if (/^s*$/.test(text.value) || text.value == '\n' || text.value == ' ') {
+                btn.disabled = true;
+            } else {
+                btn.disabled = false;
+            }
+        },100);
+        btn.addEventListener('click', fun,false);
+        function fun(){
+            var li = document.createElement('li');
+            btn.parentNode.nextElementSibling.children[0].appendChild(li);
+            var newLi = document.querySelectorAll('li');
+            btn.parentNode.nextElementSibling.children[0].lastElementChild.innerHTML = text.value + '<a href="javascript:void(0)">删除</a>';
+            for (var i = 0; i < newLi.length; i++) {
+                newLi[i].querySelector('a').addEventListener('click', function () {
+                    this.parentNode.parentNode.removeChild(this.parentNode);
+                });
+            }
+            text.value = '';
+        }
+    </script>
+</body>
+
+</html>

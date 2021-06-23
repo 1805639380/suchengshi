@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/35.jpg);
+    background-size: cover;
+}
+.opacity {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    justify-content: center;
+    align-items: center;
+}
+.iconfont {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 120px;
+    line-height: 50px;
+    margin-left: 20px;
+    color: #fff;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    transition: background-color .5s;
+}
+.iconfont:hover {
+    background-color: rgb(119, 194, 245);
+}
+.footer{
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+}
+.footer .ifo p,a{
+    color: rgba(255,255,255,.7);
+}
+.payToMe {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+.payToMe img {
+    display: block;
+    width: 350px;
+    margin: 25px auto;
+}

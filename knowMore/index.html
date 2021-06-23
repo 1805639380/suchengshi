@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/me.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../fontImg/iconfont.css">
+    <link rel="stylesheet" href="./css/learn-more.css">
+    <title>苏程室：了解更多</title>
+</head>
+
+<body>
+    <div class="opacity">
+        <a href="" class="iconfont">&#xe770;加入我们</a>
+        <a href="javascript:void(0)" class="iconfont pay">￥打赏站长</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=1805639380&site=qq&menu=yes" class="iconfont">&#xe68b;联系我们</a>
+        <a href="" class="iconfont">&#xe773;合作伙伴</a>
+        <a href="https://www.suchengshi.top" class="iconfont">&#xe6e4;回到首页</a>
+    </div>
+    <div class="payToMe">
+        <img src="./img/pay.jpg" alt="">
+    </div>
+    <div class="footer">
+        <div class="blank">
+
+        </div>
+        <div class="ifo">
+            <p>主站：&emsp;<a href="https://www.suchengshi.top/">https://www.suchengshi.top</a></p>
+            <p>备案号：赣ICP备2020014038号-1 </p>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var pay = document.querySelectorAll('a');
+            var payToMe = document.querySelector('.payToMe');
+            var foot = document.querySelector('.footer')
+            pay[1].onclick = function () {
+                payToMe.style.display = 'block';
+                foot.style.zIndex = '-1';
+            }
+            payToMe.addEventListener('click',function(){
+                this.style.display = 'none';
+                foot.style.zIndex = '1';
+            })
+        }
+
+    </script>
+</body>
+
+</html>

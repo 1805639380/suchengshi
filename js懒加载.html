@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            position: relative;
+            width: 400px;
+            list-style: none;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        li img {
+            width: 100%;
+            min-height: 300px;
+        }
+    </style>
+    <script>
+        var t1 = new Date().getTime();
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><img src="" alt="" date-src="./background/1.jpg"></li>
+        <li><img src="" alt="" date-src="./background/2.jpg"></li>
+        <li><img src="" alt="" date-src="./background/3.jpg"></li>
+        <li><img src="" alt="" date-src="./background/4.jpg"></li>
+        <li><img src="" alt="" date-src="./background/5.jpg"></li>
+        <li><img src="" alt="" date-src="./background/6.jpg"></li>
+        <li><img src="" alt="" date-src="./background/7.jpg"></li>
+        <li><img src="" alt="" date-src="./background/8.jpg"></li>
+        <li><img src="" alt="" date-src="./background/9.jpg"></li>
+        <li><img src="" alt="" date-src="./background/10.jpg"></li>
+        <li><img src="" alt="" date-src="./background/11.jpg"></li>
+    </ul>
+    <script>
+        var img = document.images;
+
+        function lowImg() {
+            for (var i = 0; i < img.length; i++) {
+                var st = document.documentElement.scrollTop || document.body.scrollTop;
+                if (img[i].offsetTop < (window.innerHeight + st)) {
+                    img[i].src = img[i].getAttribute('date-src');
+                }
+            }
+        }
+        window.onload = function(){
+
+            lowImg();
+        }
+        window.onscroll = function(){
+            lowImg();
+        }
+
+        console.log("网页加载时间：" + (new Date().getTime()-t1) + "毫秒");
+    </script>
+</body>
+
+</html>

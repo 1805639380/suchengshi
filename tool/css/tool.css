@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    cursor:url(../cursor/ayuda.cur),auto;
+}
+body {
+    background-image: url(../img/41.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    background-color: rgba(249,249,249,.5);
+}
+@media screen and (max-width:810px) {
+    html {
+        font-size: 7px;
+    }
+}
+@media screen and (max-width:342px) {
+    header {
+        display: block;
+    }
+}
+header .iconfont {
+    display: inline-block;
+    width: 7.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    line-height: 2.8125rem;
+}
+header>a{
+    color:red;
+    transform: scale(1.5);
+}
+header nav a:nth-child(3){
+    color: red;
+}
+header nav a:hover {
+    color: red;
+}
+header nav a:nth-child(6){
+    width: 3.125rem;
+    transform: scale(1.5);
+}
+header nav a{
+    position: relative;
+}
+header nav a:nth-child(3):before {
+    content: "";
+    position:absolute;
+    bottom: 0;
+    left: 29%;
+    display: inline-block;
+    width: 3.75rem;
+    height: .125rem;
+    background-color: rgb(194, 81, 209);
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: .625rem auto;
+}
+.main .topContain,
+.main .tools .toolCons,
+.main .tools .asides,
+.main .others .moreTool , 
+.main .others section ,
+footer{
+    backdrop-filter: blur(4px);
+    background-color: rgba(249,249,249,.4);
+    box-shadow: 0 0 15px rgb(107, 168, 224);
+}
+.main .topContain {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 45vh;
+    justify-content: center;
+}
+.main .topContain .banner {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+.main .topContain .banner div {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    transition: transform 1.5s;
+}
+.main .topContain .abside {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    border-left: 5px solid rgb(89, 240, 227);
+    box-sizing: border-box;
+}
+.main .topContain .abside h3::before {
+    content: "";
+    float: left;
+    display: block;
+    width: 5px;
+    height: 30px;
+    background-color: red;
+}
+.main .topContain .abside h3 {
+    color: red;
+}
+.main .topContain .abside ul {
+    list-style: none;
+    width: 100%;
+    overflow: auto;
+}
+.main .topContain .abside ul li::before {
+    content: "·";
+    font-size: 2.5rem;
+    color: blue;
+}
+.main .topContain .abside ul li{
+    float: left;
+    width: 230px;
+}
+.main .topContain .abside ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.tools {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.tools .toolCons {
+    width: 49%;
+}
+.tools .toolCons .toolTip , .tools .asides .asideTip{
+    height: 50px;
+    border: 1px solid red;
+}
+.tools .asides {
+    width: 49%;
+}
+.others {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.others .moreTool{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70%;
+    overflow: auto;
+}
+.others .moreTool div {
+    margin: 10px 0 0 10px;
+    width: 30%;
+    height: 220px;
+    background-color: #fff;
+}
+.others .moreTool div img {
+    width: 80%;
+}
+.others section {
+    width: 30%;
+    height: 30vh;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98.9vw;
+    height: 10vh;
+    margin-top: 10px;
+}
+footer span {
+    color: #444;
+}
+#live2dcanvas {
+    border: 0 !important;
+}
+.waifu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.waifu .waifu-tips {
+    width: 15.625rem;
+    color: rgb(236, 115, 135);
+}

@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* user-select: none; */
+    outline: none;
+    
+}
+body {
+    cursor: url(../cursor/Normal.cur),auto;
+}
+input[type="search"] ,p,span{
+    cursor: url(../cursor/Ocupado.cur),auto;
+}
+a,input[type="submit"]{
+    cursor: url(../cursor/ayuda.cur),auto;
+}
+/*全站黑白色*/
+/* html {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: gray
+  } */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../background/8.jpg) no-repeat;
+    background-size: 100% 105%;
+    z-index: 9999;
+}
+
+header nav {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    transition: background-color .5s;
+}
+
+header nav .top {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header nav .top .logo span {
+    font-family: "宋体";
+    font-size: 30px;
+    color: rgb(241, 29, 29);
+    line-height: 50px;
+    cursor: url(../cursor/Normal.cur),auto
+}
+
+header nav .top .ref {
+    position: absolute;
+    display: inline-block;
+    background-color: #FFECEE;
+    opacity: .5;
+    width: 80px;
+    height: 10px;
+    transform: rotate(-45deg) translateX(-25px);
+    transition: transform 2s, background-color ease-out .5s;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    display: inline-block;
+    width: 80px;
+    height: 2px;
+    background-color: #FF1493;
+    height: 0;
+    transition: height .2s;
+    opacity: .3;
+    pointer-events: none;
+}
+
+header nav ul li:first-child:hover::after {
+    height: 50px;
+}
+
+header nav ul li:nth-of-type(2):hover::after {
+    height: 50px;
+}
+
+header nav ul li:nth-of-type(3):hover::after {
+    height: 50px;
+}
+
+header nav ul li:nth-of-type(4):hover::after {
+    height: 50px;
+}
+
+header nav ul li:nth-of-type(5):hover::after {
+    height: 50px;
+}
+
+header nav ul li a {
+    display: block;
+    width: 80px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(214, 29, 29);
+}
+
+header nav .top ul li:last-child {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header nav .top ul li input[type="submit"] {
+    width: 50px;
+    background: none;
+    border: none;
+    transform: scale(1.5);
+    color: #FF4500;
+}
+
+header nav .top ul li input[type="search"] {
+    position: absolute;
+    left: 50px;
+    width: 0;
+    padding-left: 10px;
+    background-color:#fff;
+    border-radius: 24px;
+    border: 4px solid pink;
+    opacity: 0;
+    transition: width 2s, opacity .5s;
+}
+
+header nav:hover {
+    background-color: rgba(236, 160, 98, 0.6);
+}
+
+header nav:hover .top .ref {
+    background-color: transparent;
+}
+
+.synopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: 80vh;
+    align-items: center;
+}
+.synopsis .me-ins img {
+    /* position: relative; */
+    width: 10vw;
+    border: 3px solid pink;
+    border-radius: 50%;
+    /* border-image: linear-gradient(#F80, #2ED) 1 10; */
+    box-shadow:  0 0 25px #000;
+    transition: transform 1s;
+    user-select: none;
+}
+.synopsis .me-ins img:hover {
+    transform: rotate(360deg) scale(2);
+}
+.synopsis .ins p:first-child {
+    /* width: 350px; */
+    text-align: center;
+    font-size: 2vw;
+    font-family: "楷体";
+    font-weight: bolder;
+    color: #FFD664;
+    text-shadow: 5px 5px 3px rgb(199, 76, 199);
+}
+.synopsis .ins {
+    display: flex;
+    flex-direction: column;
+}
+.synopsis .ins p:nth-child(2) {
+    width: 22vw;
+    flex: 0 1 auto;
+    color: rgb(204, 86, 86);
+    font-size: 1.5vw;
+    font-family: "楷体";
+    text-indent: 2em;
+}
+header .aside {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    width: 140px;
+    z-index: 99;
+}
+header .aside .ran {
+    display: block;
+    text-align: center;
+    margin-left: 90px;
+    font-size: 50px;
+    color: pink;
+    transition: transform .5s;
+}
+header .aside .ran:hover {
+    transform: rotate(-90deg);
+}
+header .ran:hover+ul {
+    height: 260px;
+}
+header .aside ul:hover {
+    height: 260px;
+}
+header .aside ul {
+    height: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: height .5s;
+}
+header .aside ul li {
+    margin-bottom: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+header .aside ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(194, 143, 143);
+    line-height: 50px;
+    transition: background-color .5s,transform .5s;
+}
+header .aside ul li a:hover {
+    color: #fff;
+    background-color:#7081CF;
+    transform: scale(1.2);
+}
+
+footer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin-top: 50px;
+    background-color: #666666;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+footer span {
+    color: #ccc;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    ;
+}
+section .banner {
+    display: flex;
+    /* width: 48%; */
+    width: 800px;
+    height: 70%;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .5s, opacity .5s;
+    transform: scale(0);
+    opacity: 0;
+}
+section .banner div {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-end;
+    flex: 1 0 100%;
+    cursor: url(../cursor/ayuda.cur),auto;
+    transition: transform .5s;
+    z-index: 6;
+}
+section .banner div .contain{
+    display: flex;
+    width: 800px;
+    padding-left: 15px;
+    align-items:flex-start;
+    flex-direction: column;
+    background-color: rgba(0,0,0,.4);
+    cursor:auto;
+    box-sizing: border-box;
+}
+section .banner div .contain p ,section .banner div .contain span {
+    color: #fff;
+}
+.retop {
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+    z-index: 5;
+}
+.retop span{
+    display: inline-block;
+    font-size: 50px;
+    background-color: rgb(21, 104, 230);
+    color: #fff;
+    cursor: url(../cursor/ayuda.cur),auto;
+}
+section  .bannerLi {
+    position: absolute;
+    padding-left: 40px;
+    display: flex;
+    top: 181%;
+    right: 12%;
+    z-index: 99;
+}
+section  .bannerLi li {
+    list-style: none;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    margin-left: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+section .bannerLi .blue {
+    background-color: rgb(30, 103, 212);
+}
+canvas {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+section .abside {
+    position: relative;
+    width: 30%;
+    min-width: 250px;
+    height: 70%;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 5;
+    overflow: auto;
+    transition: transform .5s, opacity .5s;
+    transform: scale(0);
+    opacity: 0;
+}
+section .abside::before {
+    content: "";
+    float: left;
+    width: 8px;
+    height: 55px;
+    background-color: rgb(231, 38, 70);
+    border-bottom-right-radius: 21px;
+}
+section .abside h2 {
+    display: inline-block;
+    margin: 10px 0 0 20px;
+    color:red;
+    font-size: 25px;
+}
+section .abside .more {
+    float: right;
+    font-weight: bold;
+    margin: 15px 15px 0 0;
+    padding-left: 10px;
+    text-decoration: none;
+    background-color: red;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 21px;
+}
+section .abside .more:hover {
+    text-decoration:underline;
+}
+section .abside ul {
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 5%;
+   list-style: none;
+}
+section .abside ul li {
+    width: 160px;
+    padding: 5%;
+    margin: 1% auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    transition: transform .5s;
+}
+section .abside ul li:hover {
+    box-shadow: 0 0 5px #ccc;
+    transform: translate3d(0,-10px,0);
+}
+section .abside ul li a {
+    text-decoration: none;
+    color: rgb(221, 47, 192);
+}
+section .abside ul li a:hover {
+    text-decoration: underline;
+}
+section .abside ul li a span {
+    cursor: url(../cursor/ayuda.cur),auto;
+}
+section .abside ul li img {
+    width: 100%;
+    height: 9.375rem;
+}

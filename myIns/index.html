@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/me.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../fontImg/iconfont.css">
+    <link rel="stylesheet" href="./css/myIns.css">
+    <title>苏程室：个人介绍</title>
+</head>
+
+<body>
+    <div class="me-ins">
+        <nav>
+            <div class="logo">
+                <a href="">*MyIns*</a>
+            </div>
+            <ul>
+                <li><a href="javascript:void(0)">回到首页</a></li>
+                <li><a href="javascript:void(0)">我们的团队</a></li>
+                <li><a href="../knowMore">了解更多</a></li>
+            </ul>
+        </nav>
+        <div class="me">
+            <h2> :个人介绍</h2>
+            <img src="../img/me.jpg" alt="">
+            <p>My :ID</p>
+            <p><a href="https://www.suchengshi.top">www.suchengshi.top</a> :官网</p>
+            <p class="fontImg"><a href="" class="iconfont">&#xe619;</a>
+                <a href="" class="iconfont">&#xe6db;</a>
+                <a href="" class="iconfont">&#xe666;</a>
+                <a href="" class="iconfont">&#xe534;</a>
+                :联系方式</p>
+        </div>
+        <button class="iconfont">&#xe665;</button>
+    </div>
+    <div class="my-skill">
+        <div class="skill-ins">
+            <h2>技能介绍：</h2>
+            <ul>
+                <li>
+                    <div>
+                        <div></div>
+                    </div><span>C/C++</span>
+                </li>
+                <li>
+                    <div>
+                        <div></div>
+                    </div><span>JavaScript</span>
+                </li>
+                <li>
+                    <div>
+                        <div></div>
+                    </div><span>PHP</span>
+                </li>
+                <li>
+                    <div>
+                        <div></div>
+                    </div><span>HTML5</span>
+                </li>
+                <li>
+                    <div>
+                        <div></div>
+                    </div><span>CSS3</span>
+                </li>
+                <li>
+                    <div>
+                        <div></div>
+                    </div><span>MySQL</span>
+                </li>
+            </ul>
+            <p>正在努力提升技能水平</p>
+            <p>全栈项目逐渐完成</p>
+        </div>
+        <button class="iconfont topBtn">&#xe665;</button>
+        <button class="iconfont bottomBtn">&#xe665;</button>
+    </div>
+    <div class="experience">
+        <button class="iconfont topBtn">&#xe665;</button>
+    </div>
+    <script>
+        const btn = document.querySelectorAll("button");
+        const mySkill = document.querySelector(".my-skill");
+        const experience = document.querySelector(".experience");
+        //第一个页面
+        btn[0].parentNode.addEventListener('mousewheel', function (e) {
+            if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+                    papgOne();
+                }
+            }
+        });
+        //第二个页面
+        mySkill.addEventListener('mousewheel', function (e) {
+            if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
+                if (e.wheelDelta > 0) { //当滑轮向上滚动时  
+                    papgTwo();
+                }
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+                    papgThree();
+                }
+            }
+        });
+        //第三个页面
+        experience.addEventListener('mousewheel', function (e) {
+            if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
+                if (e.wheelDelta > 0) { //当滑轮向上滚动时  
+                    papgFour();
+                }
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+
+                }
+            }
+        });
+        function papgOne() {
+            btn[0].parentNode.style.transform = 'translateY(-50%) rotateX(90deg)';
+            btn[0].parentNode.style.transition = 'transform 1.5s';
+            mySkill.style.transform = 'translateY(-50%) rotateX(0deg)';
+            mySkill.style.transition = 'transform 1.5s';
+            skill();
+        }
+        function papgTwo() {
+            btn[0].parentNode.style.transform = 'translateY(0px) rotateX(0deg)';
+            btn[0].parentNode.style.transition = 'transform 1.5s';
+            mySkill.style.transform = 'translateY(0px) rotateX(90deg)';
+            mySkill.style.transition = 'transform 1.5s';
+            skillClear();
+        }
+        function papgThree() {
+            mySkill.style.transform = 'translateY(-100%) rotateX(90deg)';
+            mySkill.style.transition = 'transform 1.5s';
+            experience.style.transform = 'translateY(-50%) rotateX(0deg)';
+            experience.style.transition = 'transform 1.5s';
+            skillClear();
+        }
+        function papgFour() {
+            mySkill.style.transform = 'translateY(-50%) rotateX(0deg)';
+            mySkill.style.transition = 'transform 1.5s';
+            experience.style.transform = 'translateY(0) rotateX(90deg)';
+            experience.style.transition = 'transform 1.5s';
+            skill();
+        }
+        btn[0].addEventListener('click', papgOne);
+        btn[1].addEventListener('click', papgTwo);
+        btn[2].addEventListener('click',papgThree);
+        btn[3].addEventListener('click',papgFour);
+        // 鼠标拖拽事件
+        // btn[0].parentNode.addEventListener('mousedown', function () {
+        //     this.addEventListener('mousemove', move2);
+        // });
+        // function move2() {
+        //     papgOne();
+        //     btn[0].parentNode.addEventListener('mouseup', function () {
+        //         btn[0].parentNode.removeEventListener('mousemove', move2);
+        //     })
+        // }
+        // btn[1].parentNode.addEventListener('mousedown', function () {
+        //     this.addEventListener('mousemove', move3);
+        // });
+        // function move3() {
+        //     papgTwo();
+        //     btn[1].parentNode.addEventListener('mouseup', function () {
+        //         btn[1].parentNode.removeEventListener('mousemove', move3);
+        //     })
+        // }
+
+        //技能条动效果
+        const sks = document.querySelector('.skill-ins');
+        function skill() {
+            for (let i = 0; i < sks.children[1].children.length; i++) {
+                sks.children[1].children[i].children[0].children[0].style.animation = 'yun' + i + ' 2s linear forwards';
+            }
+        }
+        function skillClear() {
+            for (let i = 0; i < sks.children[1].children.length; i++) {
+                sks.children[1].children[i].children[0].children[0].style.animation = 'stop' + i + ' 2s linear forwards';
+            }
+        }
+    </script>
+</body>
+
+</html>

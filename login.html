@@ -1,0 +1,345 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="decorator" content="default" />
+    <link rel="shortcut icon" href="./logo/xQ.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fontImg/iconfont.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>登录</title>
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        body {
+            background-image: url(./background/Apollo_3840x2160.jpg);
+            background-size: cover;
+        }
+
+        .container {
+            position: relative;
+            top: 100px;
+            animation: move 3s linear infinite;
+        }
+
+        @keyframes move {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .news-nav {
+            clear: both;
+            height: 80px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .news-nav li {
+            float: left;
+            list-style-type: none;
+            margin: 0 10px;
+            font-size: 30px;
+            display: block;
+            width: 86px;
+            height: 79px;
+            text-align: center;
+            line-height: 79px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .news-nav li.on {
+            color: #74dcff;
+            border-bottom-color: #74dcff;
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+        }
+
+        #index-news-list-2 {
+            display: none;
+        }
+
+        .modal-dialog {
+            max-width: 100% !important;
+        }
+
+        .modal-content {
+            background-color: transparent;
+            border-radius: 25px;
+            width: 700px;
+        }
+
+        .loginForm {
+            width: 400px;
+        }
+
+        .loginForm .form-group:first-of-type {
+            margin-top: 25px;
+        }
+
+        .loginForm .form-group {
+            height: 60px;
+        }
+
+        .loginForm .form-group .form-control {
+            height: 40px;
+            font-size: 15px;
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            top: -2px;
+            vertical-align: middle;
+            cursor: pointer;
+            zoom: 1.6;
+        }
+
+        .remember {
+            border-radius: 50%;
+        }
+
+        input[type="radio"] {
+            position: relative;
+            top: -3px;
+            vertical-align: middle;
+            cursor: pointer;
+            zoom: 1.6;
+        }
+
+        .btn-primary {
+            background-color: #3e4963;
+            border: 0px solid transparent;
+            width: 400px;
+            height: 50px;
+            font-size: 24px;
+            font-family: STKaiti;
+        }
+
+        label {
+            color: #000;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="modal-dialog" id="login_form">
+            <div class="modal-content">
+                <div class="modal-title">
+                    <ul class="news-nav js-nav-title">
+                        <li class="on" data="login">登录</li>
+                        <li class="" data="register">注册</li>
+                    </ul>
+                </div>
+                <div class="modal-body index-news-list" id="index-news-list-1">
+                    <form class="loginForm" id="loginForm" action="" method="post">
+                        <div class="form-group">
+                            <input class="form-control required" name="name" id="loginUser" type="text"
+                                placeholder="请输入用户名" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control required" name="password" id="password" type="password"
+                                placeholder="请输入密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="remember">
+                                <input class="remember" type="checkbox" name="remember" id="loginRem" value="0" /> 记住我
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit" id="login">登录</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-body index-news-list" id="index-news-list-2">
+                    <form class="loginForm" id="registerForm" action="#" method="post">
+                        <div class="form-group">
+                            <input class="form-control required" name="name" id="resUser" type="text"
+                                placeholder="请输入要注册的用户名" autocomplete="off">
+                            <span class="place"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control required" name="password" id="rePassword" type="password"
+                                placeholder="请输入密码">
+                            <span class="holde"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control required" name="rePassword" id="rePassword1" type="password"
+                                placeholder="请再次输入密码">
+                            <span class="repwd"></span>
+                        </div>
+                        <div class="form-group">
+                            <label style="margin-right: 20px;">性别</label>
+                            <input class="remember" id="nan" name="sex" type="radio" value="男">
+                            <label for="nan" style="margin-right: 20px;">男</label>
+                            <input class="remember" id="nv" name="sex" type="radio" value="女">
+                            <label for="nv">女</label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit" id="res">注册</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./fontImg/iconfont.js"></script>
+    <script>
+        $(document).ready(function () {
+            let time = new Date();
+            $(".js-nav-title li").click(function () {
+                $(this).attr("class", "on");
+                $(this).siblings().attr("class", "");
+                var index = $(".js-nav-title li").index(this);
+                $(".index-news-list").css("display", "none");
+                $("#index-news-list-" + (index + 1)).css("display", "block");
+            });
+            // 注册用户名失去焦点事件
+            $('#resUser').blur(function () {
+                // 当注册用户名为空或者全为空格时
+                if ($('#resUser').val() === "" || /\s/.test($('#resUser').val())) {
+                    $('.place').html('用户名不能为空');
+                    $('.place').css("color", "red");
+                    $('#resUser').val("");
+                    // 当注册用户名为10~12位时满足条件，调用ajax进行判断
+                } else if (/^[a-zA-Z0-9]{10,14}$/.test($('#resUser').val())) {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "https://www.suchengshi.top/login/xQ.php",
+                        success: function (data) {
+                            console.log(data);
+                            if (data.msg === "ok") {
+                                $('.place').html('该用户名已被使用,请换一个吧~');
+                                $('.place').css("color", "red");
+                            }
+                        },
+                        data: {
+                            "user": $('#resUser').val()
+                        },
+                        error: function (jqxhr) {
+                            if (jqxhr.responseText == "") {
+                                $('.place').html('该用户名可以使用,赶快注册吧~');
+                                $('.place').css("color", "green");
+                            }
+                        }
+                    });
+                    // 当注册用户名不满足10~12位条件时
+                } else {
+                    alert('用户名需在10~14位之间!');
+                }
+            });
+            // 注册按钮点击事件
+            $('#res').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if ($('#resUser').val() == "") {
+                    alert('请输入用户名');
+                } else if ($('#rePassword').val() === "") {
+                    alert('请输入密码');
+                } else if ($('.place').text() === "该用户名已被使用,请换一个吧~") {
+                    return;
+                } else if ($('.repwd').text() === "密码不一致,再核对一遍吧~") {
+                    return;
+                } else {
+                    $.ajax({
+                        url: "https://www.suchengshi.top/login/xQres.php",
+                        type: "post",
+                        data: {
+                            user: $('#resUser').val(),
+                            password: $('#rePassword').val(),
+                            sex: $('input[name="sex"]:checked').val(),
+                            time: `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDay()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data === "新记录插入成功") {
+                                alert("注册成功！");
+                                location.reload();
+                            }
+                        }
+                    });
+                }
+            });
+            // 确认密码失去焦点事件
+            $('#rePassword1').blur(function (e) {
+                e.stopPropagation()
+                if ($('#rePassword').val() != $(this).val()) {
+                    $('.repwd').html('密码不一致,再核对一遍吧~');
+                    $('.repwd').css("color", "red");
+                    $('.holde').html('密码不一致,再核对一遍吧~');
+                    $('.holde').css("color", "red");
+                } else if ($('#rePassword').val() === $(this).val() && $('#rePassword').val() != "" && $(this).val() != "") {
+                    $('.holde').html('正确');
+                    $('.holde').css("color", "green");
+                    $('.repwd').html('正确');
+                    $('.repwd').css("color", "green");
+                }
+            });
+            // 密码判断是否符合要求
+            $('#rePassword').blur(function () {
+                // 密码须在8位到16位之间
+                if ($('#rePassword').val() === "") {
+                    return;
+                } else if (/^[a-zA-Z0-9]{8,16}$/.test($('#rePassword').val()) === false) {
+                    $('.holde').html('密码须在8~16位之间');
+                    $('.holde').css("color", "red");
+                } else {
+                    $('.holde').html('格式正确');
+                    $('.holde').css("color", "green");
+                }
+            });
+            $('#login').click(function (e) {
+                e.preventDefault();
+                if ($('#loginUser').val() === "") {
+                    alert('您还没有输入用户名呢！');
+                } else if ($('#password').val() === "") {
+                    alert('您还没有输入密码呢！');
+                } else {
+                    $.ajax({
+                        url: "https://www.suchengshi.top/login/xQlogin.php",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            user: $('#loginUser').val(),
+                            password: $('#password').val()
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.msg === "ok") {
+                                alert('登录成功！');
+                                window.location.href = "小析のHome.html";
+                            }
+                        },
+                        error: function (jqxhr) {
+                            if (jqxhr.responseText === "") {
+                                alert('用户名或密码错误，请重新输入');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
